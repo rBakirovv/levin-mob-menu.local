@@ -50,7 +50,6 @@
   transform: rotate(90deg);
 }
 
-
 /* mobile-menu */
 
 .mobile-menu {
@@ -275,7 +274,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-image: url(../img/banner-mob-menu.png);
+  background-image: url(./img/banner-mob-menu.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -299,11 +298,11 @@
 }
 
 .swipe-menu__adv_small.swipe-menu__adv-implant {
-  background-image: url(../img/banner-implant-mob-menu.png);
+  background-image: url(./img/banner-implant-mob-menu.png);
 }
 
 .swipe-menu__adv_small.swipe-menu__adv-guarantee {
-  background-image: url(../img/banner-guarantee-mob-menu.png);
+  background-image: url(./img/banner-guarantee-mob-menu.png);
 }
 
 .swipe-menu__adv-title {
