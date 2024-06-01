@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu</title>
+  <link rel="stylesheet" href="./css/mobile-menu.css">
+</head>
+
+<body>
+  <div class="mobile-menu">
+    <a href="/" class="mobile-menu__item">
+      <div class="mobile-menu__button">
+        <img class="mobile-menu__button-icon" src="./img/about.svg" alt="">
+      </div>
+      <span class="mobile-menu__text">О центре</span>
+    </a>
+    <a href="/" class="mobile-menu__item">
+      <div class="mobile-menu__button">
+        <img class="mobile-menu__button-icon" src="./img/doctors.svg" alt="">
+      </div>
+      <span class="mobile-menu__text">Врачи</span>
+    </a>
+    <div class="mobile-menu__item mobile-menu__item-centered">
+      <div class="mobile-menu__button mobile-menu__button-service">
+        <div class="menu__button-burger-ico">
+          <span class="menu__button-burger-line burger__line_first"></span>
+          <span class="menu__button-burger-line burger__line_second"></span>
+          <span class="menu__button-burger-line burger__line_third"></span>
+          <span class="menu__button-burger-line burger__line_fourth"></span>
+        </div>
+      </div>
+      <div class="mobile-menu__button-border">
+      </div>
+      <span class="mobile-menu__text">Услуги</span>
+    </div>
+    <a href="/" class="mobile-menu__item">
+      <div class="mobile-menu__button">
+        <img class="mobile-menu__button-icon" src="./img/price.svg" alt="">
+      </div>
+      <span class="mobile-menu__text">Цены</span>
+    </a>
+    <a href="/" class="mobile-menu__item">
+      <div class="mobile-menu__button">
+        <img class="mobile-menu__button-icon" src="./img/contact.svg" alt="">
+      </div>
+      <span class="mobile-menu__text">Контакты</span>
+    </a>
+  </div>
+  <div class="swipe-menu">
+    <div class="swipe-menu__scroll-item">
+      <div class="swipe-menu__scroll-dot"></div>
+    </div>
+    <div class="swipe-menu__container">
+      <div class="swipe-menu__adv-container">
+        <a href="/" class="swipe-menu__adv">
+          <p class="swipe-menu__adv-title">Лечение <span class="in-dream">во сне <span
+                class="in-dream-smile">😴</span></span>
+            без стресса
+          </p>
+        </a>
+      </div>
+      <div class="swipe-menu__adv-container">
+        <a href="/" class="swipe-menu__adv swipe-menu__adv-implant swipe-menu__adv_small">
+          <p class="swipe-menu__adv-title">Имплантация
+            😴 во сне
+          </p>
+        </a>
+        <a href="/" class="swipe-menu__adv swipe-menu__adv-guarantee swipe-menu__adv_small">
+          <p class="swipe-menu__adv-title">Пожизненная
+            гарантия
+          </p>
+        </a>
+      </div>
+      <ul class="accordions-list accordions-list__swipe-menu">
+        <li class="accordion-item">
+          <div class="accordion-head">
+            <span>Лечение зубов</span>
+            <svg class="accordion-arrow-svg" width="8" height="13" viewBox="0 0 8 13" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L6.34862 6.7052L0.999999 12.4104" stroke="#70757E" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="accordion-body">
+            <ul class="accordion-items-list">
+              <li class="accordion-item-list">
+                <p class="accordion-item-list-group">Профессианальная гигиена</p>
+              </li>
+              <li class="accordion-item-list">
+                <a href="/" class="accordion-item-link">Лечение кариеса</a>
+              </li>
+              <li class="accordion-item-list">
+                <a href="/" class="accordion-item-link">Лечение пульпита</a>
+              </li>
+              <li class="accordion-item-list">
+                <a href="/" class="accordion-item-link">Профессианальная гигиена</a>
+              </li>
+              <li class="accordion-item-list">
+                <a href="/" class="accordion-item-link">Гермитизация фиссур</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="accordion-item">
+          <div class="accordion-head">
+            <span>Лечение кариеса</span>
+            <svg class="accordion-arrow-svg" width="8" height="13" viewBox="0 0 8 13" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L6.34862 6.7052L0.999999 12.4104" stroke="#70757E" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="accordion-body">
+            <ul class="accordion-items-list">
+              <li class="accordion-item-list">
+                <a href="/" class="accordion-item-link">Лечение кариеса</a>
+              </li>
+              <li class="accordion-item-list">
+                <a href="/" class="accordion-item-link">Лечение пульпита</a>
+              </li>
+              <li class="accordion-item-list">
+                <a href="/" class="accordion-item-link">Профессианальная гигиена</a>
+              </li>
+              <li class="accordion-item-list">
+                <a href="/" class="accordion-item-link">Гермитизация фиссур</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu-background"></div>
+
+  <style>
+    body {
+      height: 10000px;
+      background-color: aquamarine;
+    }
+
+    html {
+      overflow-y: visible !important;
+    }
+  </style>
+
+  <script src="./static/js/mobile-menu.js"></script>
+  <script src="./static/js/accordion.js"></script>
+</body>
+
+</html>
