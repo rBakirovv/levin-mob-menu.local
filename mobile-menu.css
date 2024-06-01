@@ -28,8 +28,25 @@
   padding: 22.5px 24px;
 }
 
-.accordion-head__medium-span {
-  font-weight: 500;
+.accordion-head::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  right: 22.5px;
+  bottom: 50%;
+  transform: translateY(50%);
+  width: 8px;
+  height: 13px;
+  background-image: url(./img/accordion-arrow-mob-menu.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion-item_active .accordion-head::after {
+  background-image: url(./img/accordion-arrow-mob-menu-active.svg);
+  transform: translateY(50%) rotate(90deg);
 }
 
 .accordion-body {
@@ -40,14 +57,6 @@
 
 .accordion-item_active .accordion-body {
   max-height: 10000px;
-}
-
-.accordion-arrow-svg {
-  transition: all 0.3s;
-}
-
-.accordion-item_active .accordion-arrow-svg {
-  transform: rotate(90deg);
 }
 
 /* mobile-menu */
