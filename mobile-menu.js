@@ -5,6 +5,10 @@ window.addEventListener("DOMContentLoaded", function () {
   const swipeMenu = document.querySelector(".swipe-menu");
   const swipeMenuContainer = document.querySelector(".swipe-menu__container");
   const overlaySwipeMenu = document.querySelector(".menu-background");
+  const mobileMenuButtonBurger = document.querySelector(".mobile-menu__item-menu");
+
+  const header = document.querySelector("header");
+  const sidebar = document.querySelector("aside");
 
   function closeMenu() {
     swipeMenu.style.transition = "all 0.3s ease";
@@ -44,11 +48,46 @@ window.addEventListener("DOMContentLoaded", function () {
       overlaySwipeMenu.classList.add("menu-background_active");
     }
 
+    mobileMenuButtonBurger.classList.remove("active");
+
+    header.dataset.mobileOpen = "false";
+    header.classList.remove("mobile-header_active");
+    header.querySelector(".mobile-header__trigger").classList.remove("mobile-header__trigger_active");
+
+    sidebar.classList.remove("sidebar_active");
+    sidebar.style.display = "";
+
+    document.querySelector("#wrapper").classList.remove("shade");
+
     menuButton.classList.toggle("active");
 
     setTimeout(() => {
       swipeMenu.style.transition = "none";
     }, 200)
+  })
+
+  header && header.querySelector(".mobile-header__trigger").addEventListener("click", () => {
+    mobileMenuButtonBurger.classList.toggle("active");
+
+    closeMenu();
+  })
+
+  mobileMenuButtonBurger.addEventListener("click", () => {
+    mobileMenuButtonBurger.classList.toggle("active");
+
+    closeMenu();
+
+    header.dataset.mobileOpen === "true" ? header.dataset.mobileOpen = "" : header.dataset.mobileOpen = "true";
+    header.classList.toggle("mobile-header_active");
+    header.querySelector(".mobile-header__trigger").classList.toggle("mobile-header__trigger_active");
+
+    sidebar.classList.toggle("sidebar_active");
+    sidebar.style.display === "block" ? sidebar.style.display = "" : sidebar.style.display = "block";
+
+    document.querySelector("#wrapper").classList.toggle("shade");
+    document.querySelector("#wrapper").addEventListener("click", () => {
+      mobileMenuButtonBurger.classList.remove("active");
+    })
   })
 
   let touchstartY = 0;

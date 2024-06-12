@@ -62,21 +62,20 @@
 /* mobile-menu */
 
 .mobile-menu {
-  display: none;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-  width: 100%;
-  height: 95px;
   position: fixed;
-  z-index: 999;
+  z-index: 9999999;
   bottom: 0;
   left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 71px;
   border-radius: 16px 16px 0 0;
   background-color: #fff;
   box-sizing: border-box;
   filter: drop-shadow(0px -12px 30px rgba(102, 102, 102, 0.1));
-  padding: 12px 17.5px 23px;
   transform: translateY(150%);
   transition: transform 0.4s ease-in-out;
 }
@@ -97,6 +96,7 @@
   color: #5686B6;
 }
 
+/*
 .mobile-menu__item:active path {
   fill: #5686B6;
 }
@@ -104,19 +104,21 @@
 .mobile-menu__item path {
   transition: all 0.4s ease-in-out;
 }
+*/
 
 .mobile-menu__item-centered {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 
 .mobile-menu__item-centered .mobile-menu__text {
   font-weight: 500;
   font-size: 14px;
-  line-height: 18px;
-  transition: all 0.4s ease-in-out;
+  line-height: normal;
+  transition: all 0.2s ease-in-out;
 }
 
 .mobile-menu__button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,9 +128,65 @@
   border-radius: 50%;
 }
 
-.mobile-menu__button-icon {
-  max-width: 34px;
-  max-height: 21px;
+.mobile-menu__button::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) translateY(50%);
+  width: 19px;
+  height: 19px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-center-icon.mobile-menu__button::before {
+  background-image: url(./img/about-center.svg);
+}
+
+.about-center-icon.mobile-menu__button:active:before {
+  background-image: url(./img/about-center-active.svg);
+}
+
+.doctors-icon.mobile-menu__button::before { 
+  background-image: url(./img/doctors.svg);
+}
+
+.doctors-icon.mobile-menu__button:active:before{
+  background-image: url(./img/doctors-active.svg);
+}
+
+.contacts-icon.mobile-menu__button::before { 
+  background-image: url(./img/contacts.svg);
+}
+
+.contacts-icon.mobile-menu__button:active:before{
+  background-image: url(./img/contacts-active.svg);
+}
+
+.menu-icon.mobile-menu__button::before { 
+  background-image: url(./img/menu.svg);
+}
+
+.active .menu-icon.mobile-menu__button::before{
+  background-image: url(./img/menu-active.svg);
+}
+
+.menu-icon.mobile-menu__button:active:before{
+  background-image: url(./img/menu-active.svg);
+}
+
+.mobile-menu__button-service::before {
+  display: none;
+}
+
+.mobile-menu__item-centered:active .mobile-menu__text {
+  color: #313640;
+}
+
+.mobile-menu__item-menu.active .mobile-menu__text {
+  color: rgb(36, 55, 97);
 }
 
 .mobile-menu__button-service {
@@ -139,8 +197,12 @@
   background: #20A1E5;
 }
 
-.mobile-menu__button-service_active {
+.mobile-menu__button-service.active {
   background-color: #313640;
+}
+
+.mobile-menu__button-service.active .mobile-menu__text {
+  color: #313640;
 }
 
 .menu__button-burger-ico {
@@ -157,7 +219,7 @@
   background-color: #FFF;
   position: absolute;
   left: 0;
-  transition: .3s all linear;
+  transition: .2s all linear;
 }
 
 .burger__line_first {
@@ -203,23 +265,26 @@
 }
 
 .mobile-menu__text {
-  font-family: Rubik, Helvetica, Arial, sans-serif;
   position: relative;
   z-index: 2;
   display: inline;
+  font-family: 'San Francisco(SF UI)', Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: normal;
   text-align: center;
-  color: #20305B;
-  transition: all 0.4s ease-in-out;
+  color: #313640;
+  transition: all 0.2s ease-in-out;
+}
+
+.mobile-menu__button:active .mobile-menu__text {
+  color: rgb(36, 55, 97);
 }
 
 @media screen and (max-width: 1024px) {
   .mobile-menu {
     display: flex;
-    justify-content: center;
   }
 }
 
@@ -272,7 +337,6 @@
 .swipe-menu__adv-container {
   display: flex;
   gap: 10px;
-  max-width: 326px;
   height: 160px;
   width: 100%;
   text-decoration: none;
@@ -297,7 +361,8 @@
 }
 
 .swipe-menu__adv_small {
-  width: 158px;
+  max-width: 50%;
+  width: 100%;
   height: 160px;
   display: flex;
   flex-direction: column;
@@ -321,7 +386,6 @@
   font-size: 21px;
   line-height: 136%;
   color: #FFFFFF;
-  max-width: 123px;
   margin: 0;
 }
 
@@ -357,7 +421,6 @@
 
 .accordions-list__swipe-menu {
   width: 100%;
-  max-width: 326px;
 }
 
 .accordions-list__swipe-menu .accordion-item_active .accordion-head {
